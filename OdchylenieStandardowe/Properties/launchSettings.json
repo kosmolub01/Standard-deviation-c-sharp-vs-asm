@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OdchylenieStandardowe": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

@@ -1,0 +1,44 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OdchylenieStandardowe"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="OdchylenieStandardowe.MainWindow"
+        mc:Ignorable="d"
+        Title="Odchylenie standardowe" Height="450" Width="800" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="CenterGridHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="103*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="calculateStandardDeviationButton" Content="Oblicz" HorizontalAlignment="Left" Margin="190,177,0,0" VerticalAlignment="Top" Click="calculateStandardDeviationButtonOnClick"/>
+        <TextBox x:Name="selectedFileTextBox" HorizontalAlignment="Left" Margin="30,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" IsEnabled="False" Grid.ColumnSpan="2"/>
+        <Button x:Name="selectFileButton" Content="Wybierz plik" HorizontalAlignment="Left" Margin="45,39,0,0" VerticalAlignment="Top" Click="selectFileButtonOnClick" Grid.Column="1"/>
+        <Label x:Name="label" Content="Plik z danymi wejściowymi:" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Wybierz tryb:" HorizontalAlignment="Left" Margin="30,80,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="30,111,0,0" VerticalAlignment="Top" Width="76" ItemsSource="{Binding modes}" IsEditable="False">
+        </ComboBox>
+        <DataGrid x:Name="dataGrid" Margin="140,40,30,80" Grid.Column="1" AutoGenerateColumns="False" ItemsSource="{Binding DataGridItems}" SelectionChanged="dataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Lp." IsReadOnly="True" CanUserResize="True" Width="25" Binding="{Binding Lp}" HeaderStyle="{StaticResource CenterGridHeaderStyle}" >
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Tryb" IsReadOnly="True" Width="35" Binding="{Binding Tryb}" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+                <DataGridTextColumn Header="Czas [ms]" IsReadOnly="True" Width="60" Binding="{Binding Czas}" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+                <DataGridTextColumn Header="Wynik" IsReadOnly="True" Width="80" Binding="{Binding Wynik}" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+                <DataGridTextColumn Header="Plik" IsReadOnly="True" Width="*" Binding="{Binding Plik}" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="label2" Content="Czasy wykonania:" HorizontalAlignment="Left" Margin="262,9,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="button" Content="Wyczyść tabelę" HorizontalAlignment="Left" Margin="270,359,0,0" VerticalAlignment="Top" Grid.Column="1" Click="button_Click"/>
+        <Label x:Name="label3" Content="Odchylenie standardowe:" HorizontalAlignment="Left" Margin="30,148,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="resultTextBox" HorizontalAlignment="Left" Margin="30,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" IsEnabled="False"/>
+        <Label x:Name="statusLabel" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Left"  Margin="0,388,0,0" VerticalAlignment="Top" Visibility="Hidden" Background="#FFE2E2E2" Width="Auto" Height="26"/>
+
+    </Grid>
+</Window>
