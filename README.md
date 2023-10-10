@@ -12,7 +12,7 @@ Execution time strongly depends on the used processor.
 
    ![image](https://github.com/kosmolub01/Standard-deviation-c-sharp-vs-asm/assets/72302279/fb6c016d-b7de-4313-a2c9-320bf76aedd7)
 
-2. Run for Intel I7 8700:
+2. Run for Intel I7 8700 6-core processor 3.70 ghz:
 
    ![image](https://github.com/kosmolub01/Standard-deviation-c-sharp-vs-asm/assets/72302279/0fe21d5e-8a2f-4398-9b6b-17b769c688d8)
 
