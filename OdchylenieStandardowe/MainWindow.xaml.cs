@@ -2,7 +2,6 @@
 //
 // Project: "Obliczanie odchylenia standardowego próby"
 // Author: Szczepan Dwornicki
-// Date: 5th term, 2022 / 2023
 //
 ////////////////////////////////////////////////////////
 
